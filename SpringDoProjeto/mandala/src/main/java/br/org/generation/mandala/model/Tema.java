@@ -1,5 +1,6 @@
 package br.org.generation.mandala.model;
 
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -39,13 +40,18 @@ public class Tema {
 	private String descricao;
 	
 	//chave FK
-//	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
-//	@JsonIgnoreProperties("tema")
-//	private List<Post> post;
-//	
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("tema")
+	private List<Postagem> postagem;	
 	
-	
-	
+
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
 
 	//get e set
 	public long getId() {
