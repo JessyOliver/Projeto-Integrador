@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+//Postagem model
 @Entity
 @Table (name = "tb_postagens")
 public class Postagem {
