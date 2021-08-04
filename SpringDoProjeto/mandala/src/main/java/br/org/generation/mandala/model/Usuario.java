@@ -1,5 +1,7 @@
 package br.org.generation.mandala.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,9 +22,9 @@ public class Usuario {
 	@Size (max = 255)
 	private String nome;
 	
-	//@NotNull (message = "O atributo data de nascimento precisa ser preenchido")
-	// private Date dtNascimento; 
-	
+	@NotNull (message = "O atributo data de nascimento precisa ser preenchido")
+	private LocalDate dtNascimento; 
+
 	@NotNull (message = "O atributo gênero precisa ser preenchido")
 	@Size (max = 50)
 	private String genero;
@@ -52,6 +54,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public LocalDate getDtNascimento() {
+		return dtNascimento;
+	}
+
+	public void setDtNascimento(LocalDate dtNascimento) {
+		this.dtNascimento = dtNascimento;
 	}
 
 	public String getGenero() {
