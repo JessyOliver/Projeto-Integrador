@@ -19,7 +19,7 @@ import br.org.generation.mandala.model.Postagem;
 import br.org.generation.mandala.repository.PostagemRepository;
 
 @RestController
-@RequestMapping("/postagens")
+@RequestMapping("/postagem")
 @CrossOrigin(origins = "*", allowedHeaders = "*") //SOFEA 
 public class PostagemController {
 	

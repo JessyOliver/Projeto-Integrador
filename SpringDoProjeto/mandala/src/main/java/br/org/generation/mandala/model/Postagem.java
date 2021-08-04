@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 //Postagem model
 @Entity
-@Table (name = "tb_postagens")
+@Table (name = "tb_postagem")
 public class Postagem {
 	
 	@Id //Chave Primária
