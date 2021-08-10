@@ -69,6 +69,7 @@ public class UsuarioService {
 	//atualizar usu√°rio
 	public Optional<Usuario> atualizarUsuario(Usuario usuario){
 		
+		//verificando se o usuario j· est· no banco
 			if (usuarioRepository.findById(usuario.getId()).isPresent()) {
 				
 				//recebendo o email do usu√°rio
