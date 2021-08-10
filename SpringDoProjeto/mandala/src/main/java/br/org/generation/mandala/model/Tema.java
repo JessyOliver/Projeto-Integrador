@@ -26,17 +26,17 @@ public class Tema {
 	private long id;
 	
 	@NotNull(message = "O campo titulo é obrigatório")
-	@Size(min = 5, max = 100, message = "O campo titulo deve conter no minimo 5 e no maximo 100 caracteres.")
+	@Size(min = 2, max = 100, message = "O campo titulo deve conter no minimo 5 e no maximo 100 caracteres.")
 	private String titulo;
 	
-	@Size(min = 5, max = 20, message = "O campo palavraChave deve conter no minimo 5 e no maximo 20 caracteres.")
+	@Size(min = 2, max = 20, message = "O campo palavraChave deve conter no minimo 5 e no maximo 20 caracteres.")
 	private String palavraChave;
 
-	@Size(min = 5, max = 255, message = "O campo imagem deve conter no minimo 10 e no maximo 255 caracteres.")
+	@Size(min = 2, max = 255, message = "O campo imagem deve conter no minimo 10 e no maximo 255 caracteres.")
 	private String imagem;
 	
 	@NotNull(message = "O campo descrição é obrigatório")
-	@Size(min = 5, max = 255, message = "O campo descrição deve conter no minimo 10 e no maximo 255 caracteres.")
+	@Size(min = 2, max = 255, message = "O campo descrição deve conter no minimo 10 e no maximo 255 caracteres.")
 	private String descricao;
 	
 	//chave FK

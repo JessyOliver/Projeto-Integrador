@@ -49,7 +49,7 @@ public class Usuario {
 	@NotNull (message = "O atributo email precisa ser preenchido")
 	@Size (min = 2, max = 100)
 	@Email
-	private String email;
+	private String usuario;
 	
 	@NotNull (message = "O atributo senha precisa ser preenchido")
 	@Size (min = 8)
@@ -101,12 +101,14 @@ public class Usuario {
 		this.biografia = biografia;
 	}
 
-	public String getEmail() {
-		return email;
+	
+
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {
