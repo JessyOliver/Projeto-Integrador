@@ -1,5 +1,7 @@
 package br.org.generation.mandala.security;
 
-public class UserDetailsImpl {
 
+public class UserDetailsImpl {
+	
 }
+
