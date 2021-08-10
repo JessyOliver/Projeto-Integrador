@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table (name = "tb_postagem")
 public class Postagem {
 	
+	//atributos da tabela
 	@Id //Chave Primária
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Auto incremento
 	private long id;
@@ -35,14 +36,20 @@ public class Postagem {
 	@Size(max = 255)
 	private String video;
 	
-	@ManyToOne
-	@JsonIgnoreProperties
-	private Tema tema;
-	
-	
 	@Positive
 	private int curtida;
 	
+	//chave estrangeira Tema e Usuario
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
+	
+	
+	//get e set
 	public String getVideo() {
 		return video;
 	}
@@ -90,6 +97,22 @@ public class Postagem {
 
 	public void setCurtida(int curtida) {
 		this.curtida = curtida;
+	}
+
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	
