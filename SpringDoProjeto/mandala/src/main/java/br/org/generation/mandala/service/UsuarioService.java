@@ -24,7 +24,7 @@ public class UsuarioService {
 	private UsuarioRepository usuarioRepository;
 	
 	//cadastrando usuário
-	public Optional<Usuario> cadastrarUsuario(Usuario usuario){
+	public Usuario cadastrarUsuario(Usuario usuario){
 		
 		
 		//verificando se o usuário já tem cadastro
@@ -39,7 +39,7 @@ public class UsuarioService {
 			int idade = Period.between(usuario.getDtNascimento(), LocalDate.now()).getYears();
 			
 			//verificando se o usuário é maior de 18 anos
-			if (idade <= 18) {
+			if (idade < 18) {
 				
 				//informe a ele
 				throw new ResponseStatusException(
@@ -53,7 +53,7 @@ public class UsuarioService {
 				String senhaEncoder = encoder.encode(usuario.getSenha());
 				usuario.setSenha(senhaEncoder);
 				
-				return Optional.of(usuarioRepository.save(usuario));
+				return usuarioRepository.save(usuario);
 				
 
 			}
@@ -69,7 +69,7 @@ public class UsuarioService {
 	//atualizar usuário
 	public Optional<Usuario> atualizarUsuario(Usuario usuario){
 		
-		//verificando se o usuario j� est� no banco
+		//verificando se o usuario j� est� no banco
 			if (usuarioRepository.findById(usuario.getId()).isPresent()) {
 				
 				//recebendo o email do usuário
@@ -86,7 +86,7 @@ public class UsuarioService {
 					int idade = Period.between(usuario.getDtNascimento(), LocalDate.now()).getYears();
 					
 					//verificando se o usuário é maior de 18 anos
-					if (idade <= 18) {
+					if (idade <18) {
 						
 						//informe a ele
 						throw new ResponseStatusException(
@@ -138,6 +138,8 @@ public class UsuarioService {
 				//passando os dados para o usuario login
 				usuarioLogin.get().setId(usuario.get().getId());
 				usuarioLogin.get().setNome(usuario.get().getNome());
+				usuarioLogin.get().setImagem_perfil(usuario.get().getImagem_perfil());
+				usuarioLogin.get().setTipo(usuario.get().getTipo());			
 				usuarioLogin.get().setSenha(usuario.get().getSenha());
 				usuarioLogin.get().setToken(authHeader);				
 

@@ -37,12 +37,17 @@ public class Usuario {
 	@Column(name = "dt_nascimento")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dtNascimento; 
+	
+	private String imagem_perfil;
+	
+	private String tipo;
+
+	
 
 	@NotNull (message = "O atributo gênero precisa ser preenchido")
 	@Size (min = 2, max = 50)
 	private String genero;
 	
-	@NotNull (message = "O atributo biografia precisa ser preenchido")
 	@Size (min = 2, max = 160)
 	private String biografia;
 	
@@ -52,7 +57,7 @@ public class Usuario {
 	private String usuario;
 	
 	@NotNull (message = "O atributo senha precisa ser preenchido")
-	@Size (min = 8)
+	@Size (min = 6)
 	private String  senha;
 
 	// relacionamento com a tabela postagem
@@ -126,7 +131,22 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+
+	public String getImagem_perfil() {
+		return imagem_perfil;
+	}
+
+	public void setImagem_perfil(String imagem_perfil) {
+		this.imagem_perfil = imagem_perfil;
+	}
 	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 		
 
 }
